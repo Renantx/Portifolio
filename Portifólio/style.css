@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+    color: rgb(6, 0, 85);
+}
+
+
+/* CSS INDEX.HTML */
+
+
+/* HEADER (CABEÇALHO) */
+
+.header-container {
+    height: 80vh;
+    width: 100%;
+    background-color: rgb(73, 73, 73);
+    background-image: url('./img/foto.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 50px;
+}
+
+.header-container h1 {
+    font-size: 53px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.header-container h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.h-linha-header {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.h-coluna-header-50 {
+    width: 50%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 53px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.redes-sociais {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.redes-sociais a {
+    text-decoration: none;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding: 1rem 4rem;
+    border: 1px solid rgb(6, 0, 85);
+    min-width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(6, 0, 85);
+    background-color: white;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 450ms ease-in-out 0s;
+}
+
+.checkbox .trace {
+    width: 50px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1) {
+    top: 25px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+    top: 45px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3) {
+    top: 65px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+}
+
+
+/* MENU */
+
+.menu {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 10px;
+    border-radius: 50%;
+    box-shadow: rgb(6, 0, 85);
+    z-index: -1;
+    transition: 450ms ease-in-out 0s;
+}
+
+.menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 450ms ease-in-out 0s;
+}
+
+.menu-items ul {
+    list-style-type: none;
+}
+
+.menu-items ul li a {
+    margin: 8px 0;
+    color: rgb(6, 0, 85);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 45px;
+}
+
+
+/* ANIMAÇÂO MENU */
+
+#toggle:checked+.checkbox .trace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+#toggle:checked+.checkbox .trace:nth-child(2) {
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toggle:checked+.checkbox .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 48px;
+}
+
+#toggle:checked+.checkbox {
+    background-color: rgb(73, 73, 73);
+}
+
+#toggle:checked~.menu {
+    box-shadow: 0px 0px 0px 100vmax rgb(73, 73, 73);
+    z-index: 1;
+    position: fixed;
+}
+
+#toggle:checked~.menu-items {
+    visibility: visible;
+    opacity: 1;
+    position: fixed;
+}
+
+
+/* CONTEÚDO DO MAIN */
+
+.container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 3rem 0;
+}
+
+.container h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 2px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 44%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.card {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(73, 73, 73);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: rgb(73, 73, 73);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper a h2 {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-text {
+    width: 40%;
+    color: rgb(6, 0, 85);
+    font-size: 45px;
+    letter-spacing: 1px;
+}
+
+
+/* FOOTER (RODAPÉ) */
+
+.footer {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(73, 73, 73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+
+/* CSS sobre.html */
+
+
+/* HEADER (CABEÇALHO) */
+
+.header-s {
+    width: 100%;
+    height: 250px;
+    background-color: rgb(73, 73, 73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-s h1 {
+    font-size: 90px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 50px;
+    border: 20px solid white;
+    padding: 10px;
+}
+
+
+/* MAIN */
+
+
+/*FORAMAÇÂO ACADEMICA */
+
+.main-fa {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: rgb(6, 0, 85);
+}
+
+.fa-linha {
+    display: flex;
+    background-color: rgb(6, 0, 85);
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-texto {
+    width: 100%;
+    column-count: 3;
+    background-color: white;
+    border: auto solid rgb(6, 0, 85);
+}
+
+.main-fa h1 {
+    border: 10px solid rgb(73, 73, 73);
+    padding: 10px;
+    width: max-content;
+    margin: auto;
+    background-color: white;
+}
+
+.main-fa ul li {
+    font-size: 25px;
+    padding: 20px;
+}
+
+.main-fa ul li strong {
+    text-decoration-line: underline;
+    width: max-content;
+}
+
+
+/* CURSOS */
+
+.linha {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    border-top: 0.5px solid rgb(6, 0, 85);
+    border-bottom: 0.5px solid rgb(6, 0, 85);
+    background-color: rgb(73, 73, 73);
+}
+
+.backcursos {
+    width: 100%;
+    background-color: rgb(73, 73, 73);
+}
+
+.cursos {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursos h1 {
+    background-color: white;
+    border: 10px solid rgb(6, 0, 85);
+    padding: 10px;
+}
+
+.hint {
+    width: 100%;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+}
+
+.coluna-33 {
+    width: 33%;
+    margin: 0;
+    padding: 0;
+    border: 0.5px solid rgb(6, 0, 85);
+}
+
+.coluna-33 h2 {
+    font-size: 35px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid rgb(6, 0, 85);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.coluna-33 h3 {
+    text-transform: uppercase;
+    align-items: right;
+    justify-content: right;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.coluna-33 ul li {
+    font-size: 20px;
+    color: white;
+}
+
+.coluna-33 ul li strong {
+    text-decoration-line: underline;
+    color: white;
+}
+
+
+/* CSS projetos.html */
+
+
+/* HEADER (CABEÇALHO) */
+
+.header-p {
+    width: 100%;
+    height: 250px;
+    background-color: rgb(73, 73, 73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-p h1 {
+    font-size: 90px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 50px;
+    border: 20px solid white;
+    padding: 10px;
+}
+
+
+/* PROJETOS */
+
+
+/* EXPERIÊNCIAS PROFISSIONAIS */
+
+.experiencias h1 {
+    display: flex;
+    text-align: center;
+    border: 10px solid rgb(6, 0, 85);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 35px 60px;
+}
+
+.experiencias h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.exp-1 {
+    background-image: url('./img/apex.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.eplinha {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.epcoluna-50 {
+    width: 50%;
+}
+
+.epcoluna-50 p {
+    font-size: 23px;
+    text-align: justify;
+}
+
+.epcoluna-50 p strong {
+    text-decoration: underline;
+}
+
+.epcoluna-50 h5 {
+    background-color: rgb(73, 73, 73);
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+
+.exp-2 {
+    background-image: url('./img/nuclearare.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.epcoluna-50 ul {
+    font-size: 23px;
+}
+
+.exp-3 {
+    background-image: url('./img/chatbot.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.exp-4 {
+    background-image: url('./img/dataset.PNG');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.exp-5 {
+    background-image: url('./img/UML.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.exp-6 {
+    background-image: url('./img/scratch.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
